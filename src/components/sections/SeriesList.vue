@@ -1,9 +1,9 @@
 <template>
   <div>
-      <h2>Movies list</h2>
+      <h2>Series List</h2>
       <ul>
-          <li v-for="(film, index) in films" :key="index">
-              <Card :info="film"/>
+          <li v-for="(serie, index) in series" :key="index">
+              <Card :info="serie"/>
           </li>
       </ul>
   </div>
@@ -13,12 +13,12 @@
 import Card from "../elements/Card.vue";
 
 export default {
-    name: "FilmsList",
+    name: "SeriesList",
     components: {
         Card
     },
     props: {
-        films: Array
+        series: Array
     }
 }
 </script>
