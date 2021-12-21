@@ -1,6 +1,7 @@
 <template>
   <div>
     <h4>{{info.title || info.name}}</h4>
+    <img :src="`https://image.tmdb.org/t/p/w154/${info.poster_path}`" :alt="`${info.original_name}`">
     <h5>{{info.original_title || info.original_name}}</h5>
     <lang-flag :iso="`${info.original_language}`"/>
     <p>{{info.vote_average}}</p>
