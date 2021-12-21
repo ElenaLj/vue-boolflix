@@ -1,16 +1,21 @@
 <template>
-  <div>
-    <SearchBox/>
+  <div class="search-box">
+    <form @submit.prevent="$emit('search', searchText)">
+      <input type="text" placeholder="Titolo film o serie TV" v-model="searchText">
+      <button>Cerca</button>
+    </form>
   </div>
 </template>
 
 <script>
-import SearchBox from '../commons/SearchBox.vue';
+
 
 export default {
     name: 'Header',
-    components: {
-      SearchBox
+    data() {
+      return {
+        searchText: ""
+      }
     }
 }
 </script>
