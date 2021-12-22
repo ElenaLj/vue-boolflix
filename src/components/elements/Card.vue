@@ -1,27 +1,40 @@
 <template>
   <div>
     <h4>{{info.title || info.name}}</h4>
-    <img :src="`https://image.tmdb.org/t/p/w154/${info.poster_path}`" :alt="`${info.original_name}`">
+    <img :src="`https://image.tmdb.org/t/p/w154/${info.poster_path}`" :alt="`${info.original_title || info.original_name}`">
     <h5>{{info.original_title || info.original_name}}</h5>
-    <lang-flag :iso="`${info.original_language}`"/>
-    <p>{{info.vote_average}}</p>
+    <div class="flags">
+      <img v-if="flags.includes(info.original_language)" :src="require(`../../assets/img/${info.original_language}.png`)" :alt="info.original_language">
+      <img v-else src="../../assets/img/none.png" alt="Flag not available">
+    </div>
+    <div>{{info.vote_average}}</div>
   </div>
 </template>
 
 <script>
-import LangFlag from 'vue-lang-code-flags';
 
 export default {
     name: "Card",
-    components: {
-      LangFlag
-    },
     props: {
         info: Object
+    },
+    data() {
+      return {
+        flags: [
+          "en",
+          "es",
+          "fr",
+          "it"
+        ]
+      }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-
+  .flags {
+    img {
+      width: 30px;
+    }
+  }
 </style>
