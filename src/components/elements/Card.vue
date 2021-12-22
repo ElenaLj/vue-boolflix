@@ -7,7 +7,9 @@
       <img v-if="flags.includes(info.original_language)" :src="require(`../../assets/img/${info.original_language}.png`)" :alt="info.original_language">
       <img v-else src="../../assets/img/none.png" alt="Flag not available">
     </div>
-    <div>{{info.vote_average}}</div>
+    <div class="ratings" v-for="stars in 5" :key="stars">
+      <i class="far fa-star"></i>
+    </div>
   </div>
 </template>
 
@@ -27,6 +29,11 @@ export default {
           "it"
         ]
       }
+    }, 
+    computed: {
+      starRating() {
+        return Math.ceil(this.info.vote_average / 2);
+      }
     }
 }
 </script>
@@ -35,6 +42,13 @@ export default {
   .flags {
     img {
       width: 30px;
+      }
+    }
+
+  .ratings {
+    i {
+      color: red;
     }
   }
+
 </style>
