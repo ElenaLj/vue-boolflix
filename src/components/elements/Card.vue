@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="card">
     <h4>{{info.title || info.name}}</h4>
     <img :src="`https://image.tmdb.org/t/p/w154/${info.poster_path}`" :alt="`${info.original_title || info.original_name}`">
     <h5>{{info.original_title || info.original_name}}</h5>
@@ -52,6 +52,12 @@ export default {
 <style lang="scss" scoped>
 @import "../../assets/style/partials/variables.scss";
 
+  .card {
+    width: 300px;
+    height: 350px;
+    padding: 20px 30px;
+    text-align: center;
+  }
   .flags {
     img {
       width: 30px;

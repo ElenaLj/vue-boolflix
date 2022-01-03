@@ -3,11 +3,19 @@
 /* - - - - - -
     reset
 - - - - - - */
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 /* - - - - - -
     commons
 - - - - - - */
-
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
 /* - - - - - -
     containers
 - - - - - - */
