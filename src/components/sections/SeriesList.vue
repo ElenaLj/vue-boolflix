@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h2>Series List</h2>
+      <h2>Serie TV</h2>
       <ul>
           <li v-for="(serie, index) in series" :key="index">
               <Card :info="serie"/>

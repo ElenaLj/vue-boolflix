@@ -12,9 +12,14 @@
     commons
 - - - - - - */
 .header {
+    width: 100vw;
+    height: 100px;
+    background-color: $background-black;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
+
 ul {
     list-style: none;
     display: flex;

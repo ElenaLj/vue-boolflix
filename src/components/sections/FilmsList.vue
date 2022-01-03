@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h2>Movies list</h2>
+      <h2>Film</h2>
       <ul>
           <li v-for="(film, index) in films" :key="index">
               <Card :info="film"/>

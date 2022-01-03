@@ -2,12 +2,12 @@
   <div class="header">
     <!-- logo -->
     <div class="logo">
-      <h1>BOOLFLIX</h1>
+      <img src="../../assets/img/boolflix.png" alt="The Boolflix logo">
     </div>
     <!-- /logo -->
 
     <!-- navbar -->
-    <ul>
+    <ul class="navbar">
       <li>Home</li>
       <li>Serie TV</li>
       <li>Film</li>
@@ -18,8 +18,8 @@
     <!-- /navbar -->
     <!-- searchbox -->
     <form @submit.prevent="$emit('search', searchText)">
-      <input type="text" placeholder="Titolo film o serie TV" v-model="searchText">
-      <button>Cerca</button>
+      <input type="text" placeholder="Titolo film o serie TV" v-model="searchText" class="input">
+      <button class="button">Cerca</button>
     </form>
     <!-- /searchbox -->
   </div>
@@ -40,5 +40,30 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../assets/style/global.scss";
+@import "../../assets/style/partials/variables.scss"; 
 
+.logo {
+  img {
+    height: 50px;
+  }
+}
+
+.input  {
+  width: 250px;
+  height: 30px;
+  padding: 0 5px;
+  margin-right: 10px;
+  border: 2px solid red;
+  border-radius: 5px;
+  background-color: $background-dark;
+}
+
+.button {
+  height: 30px;
+  padding: 0 5px;
+  color: $text-white;
+  background-color: $background-red;
+  border: none;
+  border-radius: 5px;
+}
 </style>
