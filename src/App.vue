@@ -11,6 +11,8 @@ import Header from './components/macro/Header.vue';
 import Main from './components/macro/Main.vue';
 import Footer from './components/macro/Footer.vue';
 
+import "./assets/style/global.scss"
+
 import axios from 'axios';
 
 export default {

@@ -7,8 +7,19 @@
       <img v-if="flags.includes(info.original_language)" :src="require(`../../assets/img/${info.original_language}.png`)" :alt="info.original_language">
       <img v-else src="../../assets/img/none.png" alt="Flag not available">
     </div>
-    <div class="ratings" v-for="stars in 5" :key="stars">
-      <i class="far fa-star"></i>
+
+    <div class="ratings">
+      <div class="grey-stars">
+        <div v-for="rating in 5" :key="rating">
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
+
+      <div class="yellow-stars">
+        <div v-for="stars in starRating" :key="stars">
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -39,15 +50,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../assets/style/partials/variables.scss";
+
   .flags {
     img {
       width: 30px;
       }
-    }
+  }
 
   .ratings {
-    i {
-      color: red;
+    display: flex;
+    position: relative;
+
+    .grey-stars {
+      display: flex;
+      color: $text-grey;
+
+      & i {
+        border: 1px solid $border-grey;
+      }
+    }
+
+    .yellow-stars {
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      color: $text-yellow;
+
+        & i {
+          border: 1px solid $border-yellow;
+        }
     }
   }
 
