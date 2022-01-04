@@ -24,7 +24,7 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-  height: 100vh;
+  height: calc(100vh - 100px); //100px sono l'altezza dell'header
   background-image: url(../../assets/img/boolflix-background.jpeg);
   background-size: cover;
   background-position: center;

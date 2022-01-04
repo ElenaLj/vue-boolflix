@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="container">
       <h2>Film</h2>
       <ul>
-          <li v-for="(film, index) in films" :key="index">
+          <li v-for="(film, index) in films" :key="index" class="item">
               <Card :info="film"/>
           </li>
       </ul>
@@ -24,5 +24,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+@import "../../assets/style/partials/variables.scss";
+.item {
+    width: calc(100% / 4);
+    color: $text-white;
+}
 </style>

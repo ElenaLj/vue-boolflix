@@ -11,6 +11,10 @@
 /* - - - - - -
     commons
 - - - - - - */
+*:focus {
+    outline: none;
+}
+
 .header {
     width: 100vw;
     height: 100px;
@@ -28,7 +32,12 @@ ul {
 /* - - - - - -
     containers
 - - - - - - */
-
+.container {
+    width: 80%;
+    margin: 30px auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+}
 /* - - - - - -
     fonts
 - - - - - - */

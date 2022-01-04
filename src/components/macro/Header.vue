@@ -53,6 +53,7 @@ export default {
   height: 30px;
   padding: 0 5px;
   margin-right: 10px;
+  color: #ffffff;
   border: 2px solid red;
   border-radius: 5px;
   background-color: $background-dark;

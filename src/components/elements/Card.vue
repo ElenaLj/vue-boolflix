@@ -1,26 +1,31 @@
 <template>
   <div class="card">
-    <h4>{{info.title || info.name}}</h4>
-    <img :src="`https://image.tmdb.org/t/p/w154/${info.poster_path}`" :alt="`${info.original_title || info.original_name}`">
-    <h5>{{info.original_title || info.original_name}}</h5>
-    <div class="flags">
-      <img v-if="flags.includes(info.original_language)" :src="require(`../../assets/img/${info.original_language}.png`)" :alt="info.original_language">
-      <img v-else src="../../assets/img/none.png" alt="Flag not available">
+    <img :src="`https://image.tmdb.org/t/p/w185/${info.poster_path}`" :alt="`${info.original_title || info.original_name}`">
+
+    <div class="card_hover">
+        <h4>{{info.title || info.name}}</h4>
+        <!-- <img :src="`https://image.tmdb.org/t/p/w185/${info.poster_path}`" :alt="`${info.original_title || info.original_name}`"> -->
+        <h5>{{info.original_title || info.original_name}}</h5>
+        <div class="flags">
+          <img v-if="flags.includes(info.original_language)" :src="require(`../../assets/img/${info.original_language}.png`)" :alt="info.original_language">
+          <img v-else src="../../assets/img/none.png" alt="Flag not available">
+        </div>
+
+        <div class="ratings">
+          <div class="grey-stars">
+            <div v-for="rating in 5" :key="rating">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+
+          <div class="yellow-stars">
+            <div v-for="stars in starRating" :key="stars">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
     </div>
 
-    <div class="ratings">
-      <div class="grey-stars">
-        <div v-for="rating in 5" :key="rating">
-          <i class="fas fa-star"></i>
-        </div>
-      </div>
-
-      <div class="yellow-stars">
-        <div v-for="stars in starRating" :key="stars">
-          <i class="fas fa-star"></i>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -53,11 +58,24 @@ export default {
 @import "../../assets/style/partials/variables.scss";
 
   .card {
-    width: 300px;
-    height: 350px;
-    padding: 20px 30px;
     text-align: center;
+    position: relative;
   }
+
+  .card_hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .card_hover:hover {
+    opacity: 1;
+  }
+
   .flags {
     img {
       width: 30px;

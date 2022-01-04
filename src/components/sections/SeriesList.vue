@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
       <h2>Serie TV</h2>
       <ul>
           <li v-for="(serie, index) in series" :key="index">
