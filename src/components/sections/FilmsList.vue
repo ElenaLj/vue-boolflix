@@ -26,7 +26,7 @@ export default {
 <style lang="scss" scoped>
 @import "../../assets/style/partials/variables.scss";
 .item {
-    width: calc(100% / 4);
+    width: calc(100% / 6);
     color: $text-white;
 }
 </style>

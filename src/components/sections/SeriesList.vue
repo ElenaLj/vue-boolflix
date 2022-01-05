@@ -2,7 +2,7 @@
   <div class="container">
       <h2>Serie TV</h2>
       <ul>
-          <li v-for="(serie, index) in series" :key="index">
+          <li v-for="(serie, index) in series" :key="index" class="item">
               <Card :info="serie"/>
           </li>
       </ul>
@@ -24,5 +24,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+@import "../../assets/style/partials/variables.scss";
+.item {
+    width: calc(100% / 6);
+    color: $text-white;
+}
 </style>
