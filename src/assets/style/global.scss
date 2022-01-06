@@ -1,5 +1,7 @@
 @import "./partials/variables.scss";
 
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;700&display=swap');
+
 /* - - - - - -
     reset
 - - - - - - */
@@ -41,7 +43,13 @@ ul {
 /* - - - - - -
     fonts
 - - - - - - */
-
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
 /* - - - - - -
     typo
 - - - - - - */
+h2 {
+    color: $text-white;
+    padding: 20px 0 20px 10px;
+}
